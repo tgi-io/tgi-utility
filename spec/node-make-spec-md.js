@@ -1,8 +1,8 @@
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-spec/spec/node-runner.js
  */
-var Spec = require('../dist/tgi.spec');
-var testSpec = require('../dist/tgi.spec-test');
+var Spec = require('tgi-spec/dist/tgi.spec.js');
+var testSpec = require('../dist/tgi.utility-test');
 var spec = new Spec();
 var fs = require('fs');
 
