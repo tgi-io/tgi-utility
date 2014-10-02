@@ -5,8 +5,9 @@ var Spec = require('tgi-spec/dist/tgi.spec.js');
 var testSpec = require('../dist/tgi.utility-test');
 var spec = new Spec();
 var fs = require('fs');
+var UTILITY = require('../dist/tgi.utility');
 
-testSpec(spec);
+testSpec(spec,UTILITY);
 spec.runTests(function (msg) {
   if (msg.error) {
     console.error(msg.error);
