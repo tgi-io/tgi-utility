@@ -4,10 +4,10 @@
   /* istanbul ignore next */
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {
-      exports = module.exports = Spec;
+      exports = module.exports = UTILITY;
     }
-    exports.Spec = Spec;
+    exports.UTILITY = UTILITY;
   } else {
-    root.Spec = Spec;
+    root.UTILITY = UTILITY;
   }
 }).call(this);

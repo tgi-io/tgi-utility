@@ -4,7 +4,7 @@
 (function () {
 "use strict";
 var root = this;
-var testSpec = function(spec) {
+var testSpec = function(spec,UTILITY) {
 
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-inherit-prototype.test.js
@@ -16,8 +16,16 @@ spec.test('lib/tgi-utility-inherit-prototype', 'Spec Constructor Function', func
     test.heading('FUNCTIONS', function () {
       test.heading('inheritPrototype(p)', function () {
         test.paragraph('kinda sorta class like');
-        test.example('Code with no errors', undefined, function () {
-          // Hello World
+        test.example('quick like a duck', 'quack', function () {
+          var Duck = function () {
+          };
+          Duck.prototype.sound = function () {
+            return 'quack';
+          };
+          var Daffy = function () {
+          };
+          Daffy.prototype = UTILITY().inheritPrototype(Duck.prototype);
+          return new Daffy().sound();
         });
       });
     });

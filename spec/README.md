@@ -1,4 +1,4 @@
-#### TGI SPEC
+#### TGI UTILITY
 <p>Javascript test and spec documentation framework.</p>
 #### FUNCTIONS
 #### inheritPrototype(p)

@@ -13,6 +13,7 @@ var childProcess = require('child_process');
 // Source and packaging
 var libFiles = [
   'lib/packaging/lib-header',
+  'lib/tgi-utility.source.js',
   'lib/tgi-utility-inherit-prototype.source.js',
   'lib/packaging/lib-footer'
 ];

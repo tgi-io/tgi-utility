@@ -4,8 +4,11 @@
 var Spec = require('tgi-spec/dist/tgi.spec.js');
 var testSpec = require('../dist/tgi.utility-test');
 var spec = new Spec();
+var UTILITY = require('../dist/tgi.utility');
 
-testSpec(spec);
+console.log(JSON.stringify(UTILITY));
+testSpec(spec,UTILITY);
+
 spec.runTests(function (msg) {
   if (msg.error) {
     console.error(msg.error);

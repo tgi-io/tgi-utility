@@ -4,4 +4,4 @@
 (function () {
 "use strict";
 var root = this;
-var testSpec = function(spec) {
+var testSpec = function(spec,UTILITY) {

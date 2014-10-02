@@ -33,7 +33,6 @@ spec.runTests(function (msg) {
     p.appendChild(document.createTextNode(txt));
     document.body.appendChild(p);
   }
-
   function logError(txt) {
     var p = document.createElement("p");
     p.style.fontWeight = "bold";
@@ -46,7 +45,6 @@ spec.runTests(function (msg) {
     p.appendChild(document.createTextNode(txt));
     document.body.appendChild(p);
   }
-
   function logSuccess(txt) {
     var p = document.createElement("p");
     p.style.fontWeight = "bold";

@@ -5,6 +5,14 @@
 "use strict";
 var root = this;
 /**---------------------------------------------------------------------------------------------------------------------
+ * tgi-utility/lib/tgi-utility.source.js
+ */
+var UTILITY = function () {
+  return {
+    inheritPrototype: inheritPrototype
+  };
+};
+/**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-inherit-prototype.source.js
  */
 var inheritPrototype = function (p) {
@@ -24,10 +32,10 @@ var inheritPrototype = function (p) {
   /* istanbul ignore next */
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {
-      exports = module.exports = Spec;
+      exports = module.exports = UTILITY;
     }
-    exports.Spec = Spec;
+    exports.UTILITY = UTILITY;
   } else {
-    root.Spec = Spec;
+    root.UTILITY = UTILITY;
   }
 }).call(this);
