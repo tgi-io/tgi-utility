@@ -1,5 +1,17 @@
 #### TGI UTILITY
 <p>Javascript Utility Functions.</p>
+&nbsp;<b><i>UTILITY function exposes library:</i></b>
+```javascript
+return typeof UTILITY;
+```
+<blockquote>returns <strong>function</strong> as expected
+</blockquote>
+&nbsp;<b><i>functions are available in closure:</i></b>
+```javascript
+return UTILITY().inheritPrototype === inheritPrototype;
+```
+<blockquote>returns <strong>true</strong> as expected
+</blockquote>
 #### inheritPrototype(p)
 <p>kinda sorta class like</p>
 &nbsp;<b><i>quack like a duck:</i></b>
