@@ -16,16 +16,29 @@ spec.test('lib/tgi-utility-inherit-prototype', 'Spec Constructor Function', func
     test.heading('FUNCTIONS', function () {
       test.heading('inheritPrototype(p)', function () {
         test.paragraph('kinda sorta class like');
-        test.example('quick like a duck', 'quack', function () {
+        test.example('quack like a duck', 'quack', function () {
+          // Duck class
           var Duck = function () {
           };
+          // Duck method
           Duck.prototype.sound = function () {
             return 'quack';
           };
-          var Daffy = function () {
+          // Mallard class
+          var Mallard = function () {
           };
-          Daffy.prototype = UTILITY().inheritPrototype(Duck.prototype);
-          return new Daffy().sound();
+          // Mallard inherits Duck prototype
+          // Mallard.prototype = UTILITY().inheritPrototype(Duck.prototype);
+          Mallard.prototype = inheritPrototype(Duck.prototype);
+          // Create instance
+          var daffy = new Mallard();
+
+          // Instance of constructor & the inherited prototype's class fir daffy
+          this.shouldBeTrue(daffy instanceof Mallard);
+          this.shouldBeTrue(daffy instanceof Duck);
+
+          // What sound does daffy make?
+          return daffy.sound();
         });
       });
     });

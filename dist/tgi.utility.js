@@ -9,7 +9,10 @@ var root = this;
  */
 var UTILITY = function () {
   return {
-    inheritPrototype: inheritPrototype
+    inheritPrototype: inheritPrototype,
+    injectMethods: function(that){
+      that.inheritPrototype = inheritPrototype;
+    }
   };
 };
 /**---------------------------------------------------------------------------------------------------------------------
