@@ -27,10 +27,9 @@ spec.test('tgi-utility/lib/tgi-utility.test.js', 'Utility Library', function (ca
  */
 spec.test('tgi-utility/lib/tgi-utility-inherit-prototype.test.js', 'Spec Constructor Function', function (callback) {
   callback({log: 'tgi-utility/lib/tgi-utility-inherit-prototype.test.js'});
-  var test = spec;
-  test.heading('inheritPrototype(p)', function () {
-    test.paragraph('kinda sorta class like');
-    test.example('quack like a duck', 'quack', function () {
+  spec.heading('inheritPrototype(p)', function () {
+    spec.paragraph('kinda sorta class like');
+    spec.example('quack like a duck', 'quack', function () {
       // Duck class
       var Duck = function () {
       };
@@ -42,7 +41,6 @@ spec.test('tgi-utility/lib/tgi-utility-inherit-prototype.test.js', 'Spec Constru
       var Mallard = function () {
       };
       // Mallard inherits Duck prototype
-      // Mallard.prototype = UTILITY().inheritPrototype(Duck.prototype);
       Mallard.prototype = inheritPrototype(Duck.prototype);
       // Create instance
       var daffy = new Mallard();
@@ -63,11 +61,24 @@ spec.test('tgi-utility/lib/tgi-utility-inherit-prototype.test.js', 'Spec Constru
 
 spec.test('tgi-utility/lib/tgi-utility-strings.test.js', 'String Functions', function (callback) {
   callback({log: 'tgi-utility/lib/tgi-utility-strings.test.js'});
-  var test = spec;
-  test.heading('shizzle', function () {
-    test.paragraph('my nizzle');
-    test.example('shizzle my', 'nizzle', function () {
-      return 'nizzle';
+  spec.heading('STRING FUNCTIONS', function () {
+    spec.heading('trim(s)', function () {
+      spec.paragraph('Remove leading and trailing spaces from string.');
+      spec.example('Example', 'hello', function () {
+        return trim(' hello ');
+      });
+    });
+    spec.heading('ltrim(s)', function () {
+      spec.paragraph('Remove leading and trailing spaces from string.');
+      spec.example('Example', 'hello ', function () {
+        return ltrim(' hello ');
+      });
+    });
+    spec.heading('rtrim(s)', function () {
+      spec.paragraph('Remove leading and trailing spaces from string.');
+      spec.example('Example', ' hello', function () {
+        return rtrim(' hello ');
+      });
     });
   });
 });
