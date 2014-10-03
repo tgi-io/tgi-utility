@@ -64,20 +64,20 @@ spec.test('tgi-utility/lib/tgi-utility-strings.test.js', 'String Functions', fun
   spec.heading('STRING FUNCTIONS', function () {
     spec.heading('trim(s)', function () {
       spec.paragraph('Remove leading and trailing spaces from string.');
-      spec.example('Example', 'hello', function () {
-        return trim(' hello ');
+      spec.example('Example', '(hello)', function () {
+        return '(' + trim(' hello ') + ')';
       });
     });
     spec.heading('ltrim(s)', function () {
       spec.paragraph('Remove leading and trailing spaces from string.');
-      spec.example('Example', 'hello ', function () {
-        return ltrim(' hello ');
+      spec.example('Example', '(hello )', function () {
+        return '(' + ltrim(' hello ') + ')';
       });
     });
     spec.heading('rtrim(s)', function () {
       spec.paragraph('Remove leading and trailing spaces from string.');
-      spec.example('Example', ' hello', function () {
-        return rtrim(' hello ');
+      spec.example('Example', '( hello)', function () {
+        return '(' + rtrim(' hello ') + ')';
       });
     });
   });

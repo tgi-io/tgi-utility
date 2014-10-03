@@ -43,23 +43,23 @@ return daffy.sound();
 <p>Remove leading and trailing spaces from string.</p>
 &nbsp;<b><i>Example:</i></b>
 ```javascript
-return trim(' hello ');
+return '(' + trim(' hello ') + ')';
 ```
-<blockquote>returns <strong>hello</strong> as expected
+<blockquote>returns <strong>(hello)</strong> as expected
 </blockquote>
 #### ltrim(s)
 <p>Remove leading and trailing spaces from string.</p>
 &nbsp;<b><i>Example:</i></b>
 ```javascript
-return ltrim(' hello ');
+return '(' + ltrim(' hello ') + ')';
 ```
-<blockquote>returns <strong>hello </strong> as expected
+<blockquote>returns <strong>(hello )</strong> as expected
 </blockquote>
 #### rtrim(s)
 <p>Remove leading and trailing spaces from string.</p>
 &nbsp;<b><i>Example:</i></b>
 ```javascript
-return rtrim(' hello ');
+return '(' + rtrim(' hello ') + ')';
 ```
-<blockquote>returns <strong> hello</strong> as expected
+<blockquote>returns <strong>( hello)</strong> as expected
 </blockquote>
