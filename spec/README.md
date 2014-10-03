@@ -1,3 +1,5 @@
+#### TGI UTILITY
+<p>Javascript Utility Functions.</p>
 #### inheritPrototype(p)
 <p>kinda sorta class like</p>
 &nbsp;<b><i>quack like a duck:</i></b>

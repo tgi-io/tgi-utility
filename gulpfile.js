@@ -21,6 +21,7 @@ var libFiles = [
 // The Spec
 var specFiles = [
   'lib/packaging/spec-header',
+  'lib/tgi-utility.test.js',
   'lib/tgi-utility-inherit-prototype.test.js',
   'lib/tgi-utility-strings.test.js',
   'lib/packaging/spec-footer'
