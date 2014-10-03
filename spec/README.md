@@ -27,7 +27,6 @@ Duck.prototype.sound = function () {
 var Mallard = function () {
 };
 // Mallard inherits Duck prototype
-// Mallard.prototype = UTILITY().inheritPrototype(Duck.prototype);
 Mallard.prototype = inheritPrototype(Duck.prototype);
 // Create instance
 var daffy = new Mallard();
@@ -39,11 +38,28 @@ return daffy.sound();
 ```
 <blockquote>returns <strong>quack</strong> as expected
 </blockquote>
-#### shizzle
-<p>my nizzle</p>
-&nbsp;<b><i>shizzle my:</i></b>
+#### STRING FUNCTIONS
+#### trim(s)
+<p>Remove leading and trailing spaces from string.</p>
+&nbsp;<b><i>Example:</i></b>
 ```javascript
-return 'nizzle';
+return trim(' hello ');
 ```
-<blockquote>returns <strong>nizzle</strong> as expected
+<blockquote>returns <strong>hello</strong> as expected
+</blockquote>
+#### ltrim(s)
+<p>Remove leading and trailing spaces from string.</p>
+&nbsp;<b><i>Example:</i></b>
+```javascript
+return ltrim(' hello ');
+```
+<blockquote>returns <strong>hello </strong> as expected
+</blockquote>
+#### rtrim(s)
+<p>Remove leading and trailing spaces from string.</p>
+&nbsp;<b><i>Example:</i></b>
+```javascript
+return rtrim(' hello ');
+```
+<blockquote>returns <strong> hello</strong> as expected
 </blockquote>
