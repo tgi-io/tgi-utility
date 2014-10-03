@@ -1,6 +1,3 @@
-#### TGI SPEC
-<p>Javascript test and spec documentation framework.</p>
-#### FUNCTIONS
 #### inheritPrototype(p)
 <p>kinda sorta class like</p>
 &nbsp;<b><i>quack like a duck:</i></b>
@@ -27,4 +24,12 @@ this.shouldBeTrue(daffy instanceof Duck);
 return daffy.sound();
 ```
 <blockquote>returns <strong>quack</strong> as expected
+</blockquote>
+#### shizzle
+<p>my nizzle</p>
+&nbsp;<b><i>shizzle my:</i></b>
+```javascript
+return 'nizzle';
+```
+<blockquote>returns <strong>nizzle</strong> as expected
 </blockquote>

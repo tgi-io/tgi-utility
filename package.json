@@ -9,10 +9,11 @@
     }
   ],
   "dependencies": {
+    "sprintf-js": "0.0.7",
     "tgi-spec": "*"
   },
   "scripts": {
-    "test": "node spec/node-test.js"
+    "test": "node spec/node-runner.js"
   },
   "repository": {
     "type": "git",
