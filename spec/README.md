@@ -14,6 +14,13 @@ return UTILITY().inheritPrototype === inheritPrototype;
 </blockquote>
 #### inheritPrototype(p)
 <p>kinda sorta class like</p>
+&nbsp;<b><i>Cannot pass null:</i></b>
+```javascript
+this.shouldThrowError('*',function () {
+  inheritPrototype(null);
+});
+```
+<blockquote></blockquote>
 &nbsp;<b><i>quack like a duck:</i></b>
 ```javascript
 // Duck class
@@ -53,51 +60,105 @@ return contains(['moe', 'larry', 'curley'], 'shemp');
 ```
 <blockquote></blockquote>
 #### STRING FUNCTIONS
-#### trim(s)
-<p>Remove leading and trailing spaces from string.</p>
-&nbsp;<b><i>Example:</i></b>
+#### trim(string)
+&nbsp;<b><i>Remove leading and trailing spaces from string:</i></b>
 ```javascript
 return '(' + trim(' hello ') + ')';
 ```
 <blockquote>returns <strong>(hello)</strong> as expected
 </blockquote>
-#### ltrim(s)
-<p>Remove leading and trailing spaces from string.</p>
-&nbsp;<b><i>Example:</i></b>
+#### ltrim(string)
+&nbsp;<b><i>Remove leading spaces from string:</i></b>
 ```javascript
 return '(' + ltrim(' hello ') + ')';
 ```
 <blockquote>returns <strong>(hello )</strong> as expected
 </blockquote>
-#### rtrim(s)
-<p>Remove leading and trailing spaces from string.</p>
-&nbsp;<b><i>Example:</i></b>
+#### rtrim(string)
+&nbsp;<b><i>Remove trailing spaces from string:</i></b>
 ```javascript
 return '(' + rtrim(' hello ') + ')';
 ```
 <blockquote>returns <strong>( hello)</strong> as expected
 </blockquote>
-#### padl(string, length, fillChar)
-<p>Return string size length with fillChar padded on left.  fillChar is optional and defaults to space.</p>
-&nbsp;<b><i>Example:</i></b>
+#### left(string)
+&nbsp;<b><i>return left part of string:</i></b>
 ```javascript
-return padl('42', 10, '*');
+return left('12345',3);
+```
+<blockquote>returns <strong>123</strong> as expected
+</blockquote>
+#### right(string)
+&nbsp;<b><i>return right part of string:</i></b>
+```javascript
+return right('12345',3);
+```
+<blockquote>returns <strong>345</strong> as expected
+</blockquote>
+#### center(string)
+&nbsp;<b><i>return center part of string:</i></b>
+```javascript
+return center('12345',3);
+```
+<blockquote>returns <strong>234</strong> as expected
+</blockquote>
+#### lpad(string, length, fillChar)
+<p>Return string size length with fillChar padded on left.  fillChar is optional and defaults to space.</p>
+&nbsp;<b><i>add leading asteriks:</i></b>
+```javascript
+return lpad('42', 10, '*');
 ```
 <blockquote>returns <strong>********42</strong> as expected
 </blockquote>
-#### padr(string, length, fillChar)
-<p>Return string size length with fillChar padded on right.  fillChar is optional and defaults to space.</p>
-&nbsp;<b><i>Example:</i></b>
+&nbsp;<b><i>truncate when length is less than string length:</i></b>
 ```javascript
-return padr('etc', 6, '.');
+return lpad('okay', 2);
+```
+<blockquote>returns <strong>ok</strong> as expected
+</blockquote>
+&nbsp;<b><i>fillChar defaults to space:</i></b>
+```javascript
+return ':' + lpad('x',2) + ':';
+```
+<blockquote>returns <strong>: x:</strong> as expected
+</blockquote>
+#### rpad(string, length, fillChar)
+<p>Return string size length with fillChar padded on right.  fillChar is optional and defaults to space.</p>
+&nbsp;<b><i>Add trailing periods:</i></b>
+```javascript
+return rpad('etc', 6, '.');
 ```
 <blockquote>returns <strong>etc...</strong> as expected
 </blockquote>
-#### padc(string, length, fillChar)
-<p>Return string size length with fillChar padded on left and right.  fillChar is optional and defaults to space.</p>
-&nbsp;<b><i>Example:</i></b>
+&nbsp;<b><i>truncate when length is less than string length:</i></b>
 ```javascript
-return padc('center', 13, '.');
+return rpad('wassup', 3);
+```
+<blockquote>returns <strong>sup</strong> as expected
+</blockquote>
+&nbsp;<b><i>fillChar defaults to space:</i></b>
+```javascript
+return ':' + rpad('x',2) + ':';
+```
+<blockquote>returns <strong>:x :</strong> as expected
+</blockquote>
+#### cpad(string, length, fillChar)
+<p>Return string size length with fillChar padded on left and right.  fillChar is optional and defaults to space.</p>
+&nbsp;<b><i>center with periods:</i></b>
+```javascript
+return cpad('center', 13, '.');
 ```
 <blockquote>returns <strong>...center....</strong> as expected
+</blockquote>
+&nbsp;<b><i>truncate when length is less than string length:</i></b>
+```javascript
+return cpad('abcdef', 2);
+```
+<blockquote>returns <strong>cd</strong> as expected
+</blockquote>
+&nbsp;<b><i>fillChar defaults to space:</i></b>
+```javascript
+return ':' + cpad('x',3) + ':';
+```
+<blockquote>returns <strong>: x :</strong> as expected
 </blockquote>

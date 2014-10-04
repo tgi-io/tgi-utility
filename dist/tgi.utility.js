@@ -13,18 +13,24 @@ var UTILITY = function () {
     trim: trim,
     ltrim: ltrim,
     rtrim: rtrim,
-    padl: padl,
-    padr: padr,
-    padc: padc,
+    left: left,
+    center: center,
+    right: right,
+    lpad: lpad,
+    rpad: rpad,
+    cpad: cpad,
     contains: contains,
     injectMethods: function (that) {
       that.inheritPrototype = inheritPrototype;
       that.trim = trim;
       that.ltrim = ltrim;
       that.rtrim = rtrim;
-      that.padl = padl;
-      that.padr = padr;
-      that.padc = padc;
+      that.left = left;
+      that.center = center;
+      that.right = right;
+      that.lpad = lpad;
+      that.rpad = rpad;
+      that.cpad = cpad;
       that.contains = contains;
     }
   };
@@ -32,6 +38,7 @@ var UTILITY = function () {
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-objects.source.js
  */
+/* istanbul ignore next Object.create pretty standard now */
 var inheritPrototype = function (p) {
   if (p === null) throw new TypeError();
   if (Object.create) return Object.create(p);
@@ -59,6 +66,26 @@ var contains = function (a, obj) {
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-strings.source.js
  */
+
+/**
+ * left(string, size) - left substring
+ */
+var left = function (string, size) {
+  return string.substring(0, size);
+};
+/**
+ * right(string, size) - right substring
+ */
+var right = function (string, size) {
+  return string.substring(string.length - size, string.length);
+};
+/**
+ * center(string, size) - center substring
+ */
+var center = function (string, size) {
+  var start = (string.length - size)/2;
+  return string.substring(start, start+size);
+};
 /**
  * trim(s) - remove trailing and leading spaces
  */
@@ -78,35 +105,50 @@ var rtrim = function (s) {
   return s.replace(/\s+$/, '');
 };
 /**
- * padl(string, length, fillChar) - pad string left to length filling with fillChar
+ * lpad(string, length, fillChar) - pad string left to length filling with fillChar
  */
-var padl = function (expr, length, fillChar) {
+var lpad = function (expr, length, fillChar) {
+  fillChar = fillChar || ' ';
   var string = '' + expr;
-  while (string.length < length) {
-    string = fillChar + string;
+  if (string.length > length) {
+    return left(string, length);
+  } else {
+    while (string.length < length) {
+      string = fillChar + string;
+    }
   }
   return string;
 };
 /**
- * padr(string, length, fillChar) - pad string right to length filling with fillChar
+ * rpad(string, length, fillChar) - pad string right to length filling with fillChar
  */
-var padr = function (expr, length, fillChar) {
+var rpad = function (expr, length, fillChar) {
+  fillChar = fillChar || ' ';
   var string = '' + expr;
-  while (string.length < length) {
-    string = string + fillChar;
+  if (string.length > length) {
+    return right(string, length);
+  } else {
+    while (string.length < length) {
+      string = string + fillChar;
+    }
   }
   return string;
 };
 /**
- * padc(string, length, fillChar) - pad string right & left to length filling with fillChar
+ * cpad(string, length, fillChar) - pad string right & left to length filling with fillChar
  */
-var padc = function (expr, length, fillChar) {
+var cpad = function (expr, length, fillChar) {
+  fillChar = fillChar || ' ';
   var string = '' + expr;
   var totalPad = length - string.length;
-  if (totalPad > 0) {
-    var leftPad = string.length + Math.floor(totalPad / 2);
-    string = padl(string, leftPad, fillChar);
-    string = padr(string, length, fillChar);
+  if (string.length > length) {
+    return center(string, length);
+  } else {
+    //if (totalPad > 0) {
+      var leftPad = string.length + Math.floor(totalPad / 2);
+      string = lpad(string, leftPad, fillChar);
+      string = rpad(string, length, fillChar);
+    //}
   }
   return string;
 };

@@ -1,0 +1,4 @@
+instrumentation:
+    excludes: ['spec/*','dist/tgi.utility-test.js']
+reporting:
+  dir: build/coverage
