@@ -38,6 +38,20 @@ return daffy.sound();
 ```
 <blockquote>returns <strong>quack</strong> as expected
 </blockquote>
+#### ARRAY FUNCTIONS
+#### contains(array,object)
+<p>This method returns true or false as to whether object is contained in array.</p>
+&nbsp;<b><i>object exists in array:</i></b>
+```javascript
+return contains(['moe', 'larry', 'curley'], 'larry');
+```
+<blockquote>returns <strong>true</strong> as expected
+</blockquote>
+&nbsp;<b><i>object does not exist in array:</i></b>
+```javascript
+return contains(['moe', 'larry', 'curley'], 'shemp');
+```
+<blockquote></blockquote>
 #### STRING FUNCTIONS
 #### trim(s)
 <p>Remove leading and trailing spaces from string.</p>
@@ -62,4 +76,28 @@ return '(' + ltrim(' hello ') + ')';
 return '(' + rtrim(' hello ') + ')';
 ```
 <blockquote>returns <strong>( hello)</strong> as expected
+</blockquote>
+#### padl(string, length, fillChar)
+<p>Return string size length with fillChar padded on left.  fillChar is optional and defaults to space.</p>
+&nbsp;<b><i>Example:</i></b>
+```javascript
+return padl('42', 10, '*');
+```
+<blockquote>returns <strong>********42</strong> as expected
+</blockquote>
+#### padr(string, length, fillChar)
+<p>Return string size length with fillChar padded on right.  fillChar is optional and defaults to space.</p>
+&nbsp;<b><i>Example:</i></b>
+```javascript
+return padr('etc', 6, '.');
+```
+<blockquote>returns <strong>etc...</strong> as expected
+</blockquote>
+#### padc(string, length, fillChar)
+<p>Return string size length with fillChar padded on left and right.  fillChar is optional and defaults to space.</p>
+&nbsp;<b><i>Example:</i></b>
+```javascript
+return padc('center', 13, '.');
+```
+<blockquote>returns <strong>...center....</strong> as expected
 </blockquote>

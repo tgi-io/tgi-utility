@@ -14,7 +14,8 @@ var childProcess = require('child_process');
 var libFiles = [
   'lib/packaging/lib-header',
   'lib/tgi-utility.source.js',
-  'lib/tgi-utility-inherit-prototype.source.js',
+  'lib/tgi-utility-objects.source.js',
+  'lib/tgi-utility-arrays.source.js',
   'lib/tgi-utility-strings.source.js',
   'lib/packaging/lib-footer'
 ];
@@ -23,7 +24,8 @@ var libFiles = [
 var specFiles = [
   'lib/packaging/spec-header',
   'lib/tgi-utility.test.js',
-  'lib/tgi-utility-inherit-prototype.test.js',
+  'lib/tgi-utility-objects.test.js',
+  'lib/tgi-utility-arrays.test.js',
   'lib/tgi-utility-strings.test.js',
   'lib/packaging/spec-footer'
 ];
