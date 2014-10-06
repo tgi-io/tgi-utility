@@ -6,6 +6,11 @@ var testSpec = require('../dist/tgi.utility-test');
 var spec = new Spec();
 var UTILITY = require('../dist/tgi.utility');
 
+// Lay down some shitty code to defend against
+Object.prototype.badActor = function() {
+  return "I'm just a cook.";
+};
+
 (function () {
   UTILITY().injectMethods(this);
   // this.inheritPrototype = UTILITY().inheritPrototype;

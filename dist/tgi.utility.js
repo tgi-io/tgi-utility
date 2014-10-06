@@ -10,6 +10,7 @@ var root = this;
 var UTILITY = function () {
   return {
     inheritPrototype: inheritPrototype,
+    getInvalidProperties: getInvalidProperties,
     trim: trim,
     ltrim: ltrim,
     rtrim: rtrim,
@@ -22,6 +23,7 @@ var UTILITY = function () {
     contains: contains,
     injectMethods: function (that) {
       that.inheritPrototype = inheritPrototype;
+      that.getInvalidProperties = getInvalidProperties;
       that.trim = trim;
       that.ltrim = ltrim;
       that.rtrim = rtrim;
@@ -38,7 +40,10 @@ var UTILITY = function () {
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-objects.source.js
  */
-/* istanbul ignore next Object.create pretty standard now */
+/**
+ * inheritPrototype(p) - inherit prototype p
+ */
+/* istanbul ignore next */
 var inheritPrototype = function (p) {
   if (p === null) throw new TypeError();
   if (Object.create) return Object.create(p);
@@ -48,6 +53,20 @@ var inheritPrototype = function (p) {
   }
   F.prototype = p;
   return new F();
+};
+/**
+ * getInvalidProperties(args, allowedProperties) - used in object creation to validate constructor properties
+ */
+var getInvalidProperties = function (args, allowedProperties) {
+  var props = [];
+  for (var property in args) {
+    if (args.hasOwnProperty(property)) {
+      if (!contains(allowedProperties, property)) {
+        props.push(property);
+      }
+    }
+  }
+  return props;
 };
 
 /**---------------------------------------------------------------------------------------------------------------------

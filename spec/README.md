@@ -16,7 +16,7 @@ return UTILITY().inheritPrototype === inheritPrototype;
 <p>kinda sorta class like</p>
 &nbsp;<b><i>Cannot pass null:</i></b>
 ```javascript
-this.shouldThrowError('*',function () {
+this.shouldThrowError('*', function () {
   inheritPrototype(null);
 });
 ```
@@ -45,6 +45,21 @@ return daffy.sound();
 ```
 <blockquote>returns <strong>quack</strong> as expected
 </blockquote>
+#### getInvalidProperties(args,allowedProperties)
+<p>Functions that take an object as it's parameter use this to validate the properties of the parameter by returning any invalid properties</p>
+&nbsp;<b><i>valid property:</i></b>
+```javascript
+// got Kahn and value backwards so Kahn is an unknown property
+return getInvalidProperties({name: 'name', Kahn: 'value'}, ['name', 'value'])[0];
+```
+<blockquote>returns <strong>Kahn</strong> as expected
+</blockquote>
+&nbsp;<b><i>invalid property:</i></b>
+```javascript
+// no unknown properties
+return getInvalidProperties({name: 'name', value: 'Kahn'}, ['name', 'value']).length;
+```
+<blockquote></blockquote>
 #### ARRAY FUNCTIONS
 #### contains(array,object)
 <p>This method returns true or false as to whether object is contained in array.</p>
