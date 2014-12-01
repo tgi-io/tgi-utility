@@ -9,7 +9,7 @@ var testSpec = function(spec,UTILITY) {
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility.test.js
  */
-spec.test('tgi-utility/lib/tgi-utility.test.js', 'Utility Library', function (callback) {
+spec.test('tgi-utility/lib/tgi-utility.test.js', 'Utility Library', 'description', function (callback) {
   callback({log: 'tgi-utility/lib/tgi-utility.test.js'});
   spec.heading('TGI UTILITY', function () {
     spec.paragraph('Javascript Utility Functions.');
@@ -25,7 +25,7 @@ spec.test('tgi-utility/lib/tgi-utility.test.js', 'Utility Library', function (ca
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-objects.test.js
  */
-spec.test('tgi-utility/lib/tgi-utility-objects.test.js', 'Spec Constructor Function', function (callback) {
+spec.test('tgi-utility/lib/tgi-utility-objects.test.js', 'Spec Constructor Function', 'description', function (callback) {
   callback({log: 'tgi-utility/lib/tgi-utility-objects.test.js'});
   spec.heading('inheritPrototype(p)', function () {
     spec.paragraph('kinda sorta class like');
@@ -77,7 +77,7 @@ spec.test('tgi-utility/lib/tgi-utility-objects.test.js', 'Spec Constructor Funct
 /**---------------------------------------------------------------------------------------------------------------------
  * tgi-utility/lib/tgi-utility-arrays.test.js
  */
-spec.test('tgi-utility/lib/tgi-utility-arrays.test.js', 'Array Functions', function (callback) {
+spec.test('tgi-utility/lib/tgi-utility-arrays.test.js', 'Array Functions', 'description', function (callback) {
   callback({log: 'tgi-utility/lib/tgi-utility-arrays.test.js'});
   spec.heading('ARRAY FUNCTIONS', function () {
     spec.heading('contains(array,object)', function () {
@@ -96,7 +96,7 @@ spec.test('tgi-utility/lib/tgi-utility-arrays.test.js', 'Array Functions', funct
  * tgi-utility/lib/tgi-utility-strings.test.js
  */
 
-spec.test('tgi-utility/lib/tgi-utility-strings.test.js', 'String Functions', function (callback) {
+spec.test('tgi-utility/lib/tgi-utility-strings.test.js', 'String Functions', 'description', function (callback) {
   callback({log: 'tgi-utility/lib/tgi-utility-strings.test.js'});
   spec.heading('STRING FUNCTIONS', function () {
     spec.heading('trim(string)', function () {
