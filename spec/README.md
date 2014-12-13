@@ -1,5 +1,7 @@
+#Utility Library
 #### TGI UTILITY
-<p>Javascript Utility Functions.</p>
+Javascript Utility Functions.    
+
 &nbsp;<b><i>UTILITY function exposes library:</i></b>
 ```javascript
 return typeof UTILITY;
@@ -12,15 +14,16 @@ return UTILITY().inheritPrototype === inheritPrototype;
 ```
 <blockquote>returns <strong>true</strong> as expected
 </blockquote>
+## [&#9664;](#-utility-library)&nbsp;[&#8984;](#table-of-contents)&nbsp;[&#9654;](#-array-functions) &nbsp;Spec Constructor Function
 #### inheritPrototype(p)
-<p>kinda sorta class like</p>
+kinda sorta class like    
+
 &nbsp;<b><i>Cannot pass null:</i></b>
 ```javascript
 this.shouldThrowError('*', function () {
   inheritPrototype(null);
 });
 ```
-<blockquote></blockquote>
 &nbsp;<b><i>quack like a duck:</i></b>
 ```javascript
 // Duck class
@@ -46,7 +49,8 @@ return daffy.sound();
 <blockquote>returns <strong>quack</strong> as expected
 </blockquote>
 #### getInvalidProperties(args,allowedProperties)
-<p>Functions that take an object as it's parameter use this to validate the properties of the parameter by returning any invalid properties</p>
+Functions that take an object as it's parameter use this to validate the properties of the parameter by returning any invalid properties    
+
 &nbsp;<b><i>valid property:</i></b>
 ```javascript
 // got Kahn and value backwards so Kahn is an unknown property
@@ -59,10 +63,11 @@ return getInvalidProperties({name: 'name', Kahn: 'value'}, ['name', 'value'])[0]
 // no unknown properties
 return getInvalidProperties({name: 'name', value: 'Kahn'}, ['name', 'value']).length;
 ```
-<blockquote></blockquote>
+## [&#9664;](#-spec-constructor-function)&nbsp;[&#8984;](#table-of-contents)&nbsp;[&#9654;](#-string-functions) &nbsp;Array Functions
 #### ARRAY FUNCTIONS
 #### contains(array,object)
-<p>This method returns true or false as to whether object is contained in array.</p>
+This method returns true or false as to whether object is contained in array.    
+
 &nbsp;<b><i>object exists in array:</i></b>
 ```javascript
 return contains(['moe', 'larry', 'curley'], 'larry');
@@ -73,7 +78,7 @@ return contains(['moe', 'larry', 'curley'], 'larry');
 ```javascript
 return contains(['moe', 'larry', 'curley'], 'shemp');
 ```
-<blockquote></blockquote>
+## [&#9664;](#-array-functions)&nbsp;[&#8984;](#table-of-contents)&nbsp;[&#9654;](#-summary) &nbsp;String Functions
 #### STRING FUNCTIONS
 #### trim(string)
 &nbsp;<b><i>Remove leading and trailing spaces from string:</i></b>
@@ -118,7 +123,8 @@ return center('12345',3);
 <blockquote>returns <strong>234</strong> as expected
 </blockquote>
 #### lpad(string, length, fillChar)
-<p>Return string size length with fillChar padded on left.  fillChar is optional and defaults to space.</p>
+Return string size length with fillChar padded on left.  fillChar is optional and defaults to space.    
+
 &nbsp;<b><i>add leading asteriks:</i></b>
 ```javascript
 return lpad('42', 10, '*');
@@ -138,7 +144,8 @@ return ':' + lpad('x',2) + ':';
 <blockquote>returns <strong>: x:</strong> as expected
 </blockquote>
 #### rpad(string, length, fillChar)
-<p>Return string size length with fillChar padded on right.  fillChar is optional and defaults to space.</p>
+Return string size length with fillChar padded on right.  fillChar is optional and defaults to space.    
+
 &nbsp;<b><i>Add trailing periods:</i></b>
 ```javascript
 return rpad('etc', 6, '.');
@@ -158,7 +165,8 @@ return ':' + rpad('x',2) + ':';
 <blockquote>returns <strong>:x :</strong> as expected
 </blockquote>
 #### cpad(string, length, fillChar)
-<p>Return string size length with fillChar padded on left and right.  fillChar is optional and defaults to space.</p>
+Return string size length with fillChar padded on left and right.  fillChar is optional and defaults to space.    
+
 &nbsp;<b><i>center with periods:</i></b>
 ```javascript
 return cpad('center', 13, '.');
@@ -177,3 +185,4 @@ return ':' + cpad('x',3) + ':';
 ```
 <blockquote>returns <strong>: x :</strong> as expected
 </blockquote>
+## [&#9664;](#-string-functions)&nbsp;[&#8984;](#table-of-contents) &nbsp;Summary
